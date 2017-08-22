@@ -1,23 +1,43 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="toolbar" v-show="isShowToolbar">
+      <div class="icom meun"></div>
+      <div class="menu_container">
+        <router-link tag="div" to="/music"></router-link>
+        <router-link tag="div" to="/discover"></router-link>
+        <router-link tag="div" to="/friends"></router-link>
+      </div>
+    </div>
     <router-view></router-view>
+    <control-bar :isShow="isShow"></control-bar>
   </div>
 </template>
 
 <script>
+import controlBar from '@/components/controlBar'
 export default {
-  name: 'app'
+  data(){
+    return{
+      isShow: true
+    }
+  },
+  created(){
+    
+  },
+  computed: {
+    isShowToolbar(){
+
+    }
+  },
+  components: {
+    controlBar
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "assets/css/reset.css";
+  #app #toolbar{
+
+  }
 </style>
